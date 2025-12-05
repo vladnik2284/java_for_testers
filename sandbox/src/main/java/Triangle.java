@@ -1,13 +1,8 @@
 public class Triangle {
 
-   public static void main(String[] agrs) {
-       printPerimeterTriangle(7.0, 7.0, 9.0);
-       printAreaTriangle(3.0, 4.0, 5.0);
-   }
-
-
     static void printPerimeterTriangle(double a, double b, double c) {
-        System.out.println("Периметр тругольника со сторонами " + a + " , " + b + " , " + c + " = "  + perimeterTriangle(a, b, c));
+        var text = String.format("Периметр тругольника со сторонами %.1f, %.1f и %.1f = %.1f", a, b, c, perimeterTriangle(a, b, c));
+        System.out.println(text);
     }
 
     private static double perimeterTriangle(double a, double b, double c) {
