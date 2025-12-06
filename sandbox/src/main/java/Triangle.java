@@ -1,20 +1,30 @@
 public class Triangle {
 
-    static void printPerimeterTriangle(double a, double b, double c) {
-        var text = String.format("Периметр тругольника со сторонами %.1f, %.1f и %.1f = %.1f", a, b, c, perimeterTriangle(a, b, c));
+    private double a;
+    private double b;
+    private double c;
+
+    public Triangle(double a, double b, double c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    static void printPerimeterTriangle(Triangle per) {
+        var text = String.format("Периметр тругольника со сторонами %.1f, %.1f и %.1f = %.1f", per.a, per.b, per.c, per.perimeterTriangle());
         System.out.println(text);
     }
 
-    private static double perimeterTriangle(double a, double b, double c) {
-        return a + b + c;
+    public static void printAreaTriangle(Triangle ar) {
+        System.out.println("Площадь тругольника со сторонами " + ar.a + " , " + ar.b + " , " + ar.c + " = " + ar.areaTriangle());
     }
 
-    static void printAreaTriangle(double a, double b, double c) {
-                System.out.println("Площадь тругольника со сторонами " + a + " , " + b + " , " + c + " = " + areaTriangle( a,  b, c));
+    public double areaTriangle() {
+        double p = perimeterTriangle() / 2;
+        return Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
     }
 
-    private static double areaTriangle(double a, double b, double c) {
-        double p = perimeterTriangle(a, b, c) / 2;
-        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+    public double perimeterTriangle() {
+        return this.a + this.b + this.c;
     }
 }
