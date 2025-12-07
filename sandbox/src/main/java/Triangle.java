@@ -3,6 +3,11 @@ public record Triangle(
         double b,
         double c
 ) {
+    public Triangle {
+        if (a < 0 || b < 0 || c < 0 || (a + b) <= c || (a + c) <= b || (b +c) <= a) {
+            throw new IllegalArgumentException("Triangle a or b or c should be non-negativt");
+        }
+    }
 
     static void printPerimeterTriangle(Triangle per) {
         var text = String.format("Периметр тругольника со сторонами %.1f, %.1f и %.1f = %.1f", per.a, per.b, per.c, per.perimeterTriangle());
@@ -21,4 +26,5 @@ public record Triangle(
     public double perimeterTriangle() {
         return this.a + this.b + this.c;
     }
+
 }
