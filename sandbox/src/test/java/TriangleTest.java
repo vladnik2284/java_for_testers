@@ -74,4 +74,26 @@ public class TriangleTest {
 
         }
     }
+
+    @Test
+    void comparisonTriangleAB() {
+        var t1 = new Triangle(3, 4, 5);
+        var t2 = new Triangle(4, 3, 5);
+        Assertions.assertEquals(t1, t2);
+    }
+
+    @Test
+    void comparisonTriangleAnotBC() {
+        var t1 = new Triangle(3, 4, 5);
+        var t2 = new Triangle(3, 5, 4);
+        Assertions.assertEquals(t1, t2);
+    }
+
+    @Test
+    void comparisonTriangleAnotCA() {
+        var t1 = new Triangle(3, 4, 5);
+        var t2 = new Triangle(5, 4, 3);
+        Assertions.assertEquals(t1, t2);
+    }
 }
+
