@@ -4,8 +4,11 @@ public record Triangle(
         double c
 ) {
     public Triangle {
-        if (a < 0 || b < 0 || c < 0 || (a + b) <= c || (a + c) <= b || (b +c) <= a) {
+        if (a < 0 || b < 0 || c < 0 ) {
             throw new IllegalArgumentException("Triangle a or b or c should be non-negativt");
+        }
+        if ((a + b) <= c || (a + c) <= b || (b +c) <= a) {
+            throw new IllegalArgumentException("The sum of two sides of a triangle cannot be less than or equal to the third side");
         }
     }
 
