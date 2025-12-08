@@ -68,7 +68,7 @@ public class TriangleTest {
     @Test
     void cannotCreateTriahgleWithSumSideC() {
         try {
-            new Triangle(7, 1, 7);
+            new Triangle(7, 1, 8);
             Assertions.fail();
         } catch (IllegalArgumentException exception) {
 
