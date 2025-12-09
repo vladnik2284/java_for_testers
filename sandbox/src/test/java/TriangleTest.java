@@ -76,24 +76,46 @@ public class TriangleTest {
     }
 
     @Test
-    void comparisonTriangleAB() {
+    void comparisonTriangleBAC() {
         var t1 = new Triangle(3, 4, 5);
         var t2 = new Triangle(4, 3, 5);
         Assertions.assertEquals(t1, t2);
     }
 
     @Test
-    void comparisonTriangleAnotBC() {
+    void comparisonTriangleACB() {
         var t1 = new Triangle(3, 4, 5);
         var t2 = new Triangle(3, 5, 4);
         Assertions.assertEquals(t1, t2);
     }
 
     @Test
-    void comparisonTriangleAnotCA() {
+    void comparisonTriangleCBA() {
         var t1 = new Triangle(3, 4, 5);
         var t2 = new Triangle(5, 4, 3);
         Assertions.assertEquals(t1, t2);
     }
+
+    @Test
+    void comparisonTriangleABC() {
+        var t1 = new Triangle(2, 3, 4);
+        var t2 = new Triangle(2, 3, 4);
+        Assertions.assertEquals(t1, t2);
+    }
+
+    @Test
+    void comparisonTriangleBCA() {
+        var t1 = new Triangle(2, 3, 4);
+        var t2 = new Triangle(3, 4, 2);
+        Assertions.assertEquals(t1, t2);
+    }
+
+    @Test
+    void comparisonTriangleCAB() {
+        var t1 = new Triangle(2, 3, 4);
+        var t2 = new Triangle(4, 2, 3);
+        Assertions.assertEquals(t1, t2);
+    }
+
 }
 

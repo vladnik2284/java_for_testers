@@ -9,7 +9,7 @@ public record Triangle(
         if (a < 0 || b < 0 || c < 0 ) {
             throw new IllegalArgumentException("Triangle a or b or c should be non-negativt");
         }
-        if ((a + b) <= c || (a + c) <= b || (b +c) <= a) {
+        if ((a + b) <= c || (a + c) <= b || (b + c) <= a) {
             throw new IllegalArgumentException("The sum of two sides of a triangle cannot be less than or equal to the third side");
         }
     }
@@ -39,7 +39,9 @@ public record Triangle(
         return (Double.compare(a, triangle.a) == 0 && Double.compare(b, triangle.b) == 0 && Double.compare(c, triangle.c) == 0)
                 || (Double.compare(a, triangle.b) == 0 && Double.compare(b, triangle.a) == 0 && Double.compare(c, triangle.c) == 0)
                 || (Double.compare(a, triangle.c) == 0 && Double.compare(b, triangle.b) == 0 && Double.compare(c, triangle.a) == 0)
-                || (Double.compare(a, triangle.a) == 0 && Double.compare(b, triangle.c) == 0 && Double.compare(c, triangle.b) == 0);
+                || (Double.compare(a, triangle.a) == 0 && Double.compare(b, triangle.c) == 0 && Double.compare(c, triangle.b) == 0)
+                || (Double.compare(a, triangle.b) == 0 && Double.compare(b, triangle.c) == 0 && Double.compare(c, triangle.a) == 0)
+                || (Double.compare(a, triangle.c) == 0 && Double.compare(b, triangle.a) == 0 && Double.compare(c, triangle.b) == 0);
     }
 
     @Override
