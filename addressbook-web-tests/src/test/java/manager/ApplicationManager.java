@@ -1,3 +1,5 @@
+package manager;
+
 import model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -8,8 +10,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class ApplicationManager {
 
     protected static WebDriver driver;
+    private LoginHelper session;
 
-    void init() {
+
+    public void init() {
         if (driver == null) {
             driver = new FirefoxDriver();
             Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
@@ -30,7 +34,7 @@ public class ApplicationManager {
         }
     }
 
-    protected void createGroup(GroupData group) {
+    public void createGroup(GroupData group) {
         driver.findElement(By.name("new")).click();
         driver.findElement(By.name("group_name")).click();
         driver.findElement(By.name("group_name")).sendKeys(group.name());
@@ -42,17 +46,24 @@ public class ApplicationManager {
         driver.findElement(By.linkText("group page")).click();
     }
 
-    protected void openGroupsPage() {
+    public LoginHelper session() {
+        if (session == null) {
+            session = new LoginHelper();
+        }
+        return session;
+    }
+
+    public void openGroupsPage() {
         if (! isElementPresent(By.name("new"))) {
             driver.findElement(By.linkText("groups")).click();
         }
     }
 
-    protected boolean isGroupPresent() {
+    public boolean isGroupPresent() {
         return isElementPresent(By.name("selected[]"));
     }
 
-    protected void deleteGroup() {
+    public void deleteGroup() {
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.name("delete")).click();
         driver.findElement(By.linkText("group page")).click();
