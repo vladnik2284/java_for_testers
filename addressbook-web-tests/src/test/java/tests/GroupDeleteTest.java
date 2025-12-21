@@ -7,11 +7,10 @@ public class GroupDeleteTest extends TestBase{
 
     @Test
     public void canDeleteGroup() {
-        app.openGroupsPage();
-        if (!app.isGroupPresent()) {
-            app.createGroup(new GroupData("group 1", "group header", "group footer"));
+        if (!app.groups().isGroupPresent()) {
+            app.groups().createGroup(new GroupData("group 1", "group header", "group footer"));
         }
-        app.deleteGroup();
+        app.groups().deleteGroup();
     }
 
 }
