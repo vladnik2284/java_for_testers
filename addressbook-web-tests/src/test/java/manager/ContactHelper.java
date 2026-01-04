@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 public class ContactHelper extends HelperBase {
 
-    public GroupHelper(ApplicationManager manager){
+    public ContactHelper(ApplicationManager manager){
 
         super(manager);
     }
