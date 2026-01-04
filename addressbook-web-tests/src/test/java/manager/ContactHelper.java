@@ -42,7 +42,7 @@ public class ContactHelper extends HelperBase {
         return manager.isElementPresent(By.name("selected[]"));
     }
 
-    public void removeContact() {
+    public void deleteContact() {
         selectContact();
         removeSelectedContact();
         openContactPage();

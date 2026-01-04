@@ -17,4 +17,14 @@ public class ContactCreationTests extends TestBase {
                 "79387474123"
         ));
     }
+
+    @Test
+    public void canCreateContactWithEmptylastName() {
+        app.contacts().createContact(new ContactData());
+    }
+
+    @Test
+    public void canCreateContactWithEmptylastNameOnly() {
+        app.contacts().createContact(new ContactData().withLastName("Last name only"));
+    }
 }
