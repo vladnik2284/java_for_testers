@@ -2,7 +2,7 @@ package model;
 
 public record ContactData (
         String lastName,
-        String fistName,
+        String firstName,
         String address,
         String email,
         String phones
