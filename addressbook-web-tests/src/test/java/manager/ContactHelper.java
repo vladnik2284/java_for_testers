@@ -45,7 +45,7 @@ public class ContactHelper extends HelperBase {
     public void deleteContact() {
         selectContact();
         removeSelectedContact();
-        openContactPage();
+        returnToHomePage();
 
     }
 

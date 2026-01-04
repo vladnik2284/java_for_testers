@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static tests.TestBase.app;
 
-public class ContactDeleteTests {
+public class ContactDeleteTests extends TestBase {
 
     @Test
     public void canDeleteContact() {
