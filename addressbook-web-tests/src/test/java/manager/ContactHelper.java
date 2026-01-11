@@ -20,6 +20,10 @@ public class ContactHelper extends HelperBase {
     public void openContactPage() {
         click(By.linkText("add new"));
     }
+
+    public void openContactHome() {
+        click(By.linkText("home"));
+    }
     public void fillContactForm(ContactData contact) {
         type(By.name("firstname"), contact.firstName());
         type(By.name("address"), contact.address());
@@ -37,6 +41,7 @@ public class ContactHelper extends HelperBase {
 
     }
 
+
     public boolean isContactPresent() {
         openContactPage();
         return manager.isElementPresent(By.name("selected[]"));
@@ -50,7 +55,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public int getCount() {
-        openContactPage();
+        openContactHome();
         return manager.driver.findElements(By.name("selected[]")).size();
     }
 
