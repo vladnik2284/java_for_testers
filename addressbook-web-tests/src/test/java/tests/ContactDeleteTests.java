@@ -10,7 +10,7 @@ public class ContactDeleteTests extends TestBase {
 
     @Test
     public void canDeleteContact() {
-        if (!app.contacts().isContactPresent()) {
+        if (app.contacts().getCount() == 0) {
             app.contacts().createContact(new ContactData("Имя", "Фамилия", "Тархова 33", "VVV@yandex.ru","+79639663963"));
         }
         app.contacts().deleteContact();
