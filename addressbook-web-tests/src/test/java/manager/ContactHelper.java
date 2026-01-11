@@ -49,6 +49,11 @@ public class ContactHelper extends HelperBase {
 
     }
 
+    public int getCount() {
+        openContactPage();
+        return manager.driver.findElements(By.name("selected[]")).size();
+    }
+
     private void selectContact() {
         click(By.name("selected[]"));
     }
